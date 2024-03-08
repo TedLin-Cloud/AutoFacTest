@@ -22,7 +22,9 @@ namespace AutofacTest.Controllers
         public IActionResult Get()
         {
             _logService.Log("LOG");
-            return Ok(_encryptService.Encrypt("test"));
+            _logService.Log(_encryptService.Encrypt("test"));
+
+            return Ok(_logService.ID);
         }
     }
 }
